@@ -70,5 +70,5 @@ jobs:
           ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} <<'EOF'
           docker load < /tmp/image.tar
           docker rm -f 2026-web03 || true
-          docker run -d --name 2026-web03 -p 8501:5010 2026-web03:latest
+          docker run -d --name 2026-web03 -p 8502:5010 2026-web03:latest
         EOF
