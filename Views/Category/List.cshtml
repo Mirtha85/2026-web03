@@ -1,0 +1,49 @@
+@model IEnumerable<Category>
+
+<section class="hero secondary">
+    <h1>Explora Categorías</h1>
+    <p>Encuentra exactamente lo que necesitas explorando nuestras categorías especializadas.</p>
+</section>
+
+<div class="category-grid">
+    @foreach (var category in Model)
+    {
+        <div class="category-card">
+            <h3>@category.CategoryName</h3>
+            <p>@category.Description</p>
+            <a asp-controller="Appliance" asp-action="List" class="btn-link">Ver Productos</a>
+        </div>
+    }
+</div>
+
+<style>
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 4rem 5%;
+}
+.category-card {
+    background: #fdfdfd;
+    padding: 2.5rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.category-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.category-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.btn-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+</style>

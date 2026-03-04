@@ -1,0 +1,22 @@
+@model ApplianceListViewModel
+
+<section class="hero">
+    <h1>Moderniza Tu Estilo de Vida</h1>
+    <p>Ofrecemos electrodomésticos de alta calidad cuando los necesites. Con nosotros, obtienes precisión, rapidez y comodidad en cada paso.</p>
+    <a href="#" class="btn-contact" style="display:inline-block; margin-top: 1rem;">Más Información</a>
+    <div class="hero-image" style="background-image: url('/images/hero_appliances.png');"></div>
+</section>
+
+<div class="appliance-grid">
+    @foreach (var appliance in Model.Appliances)
+    {
+        <div class="appliance-card">
+            <img src="@appliance.ImageUrl" alt="@appliance.Name" />
+            <div class="appliance-info">
+                <h3>@appliance.Name</h3>
+                <p>@appliance.ShortDescription</p>
+                <div class="price">@appliance.Price.ToString("C")</div>
+            </div>
+        </div>
+    }
+</div>

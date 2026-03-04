@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --accent-color: #556b2f;
+    /* Dark Olive Green from containers */
+    --text-color: #333333;
+    --bg-color: #f8f9fa;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: var(--secondary-color);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.btn-contact {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 5%;
+    background: var(--secondary-color);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    margin-top: 2rem;
+}
+
+/* Appliance Grid */
+.appliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 5%;
+}
+
+.appliance-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.appliance-card:hover {
+    transform: translateY(-5px);
+}
+
+.appliance-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: #eef1ef;
+    /* Color similar al diseño AXION */
+    display: block;
+}
+
+.appliance-card img:after {
+    content: "Image in high-resolution processing...";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #888;
+    font-size: 0.8rem;
+    padding: 20px;
+    text-align: center;
+}
+
+.appliance-info {
+    padding: 1.5rem;
+}
+
+.appliance-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.appliance-info .price {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.hero.secondary {
+    padding: 3rem 5%;
+    border-bottom: 1px solid #eee;
+}
+
+.hero.secondary h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 4rem 5%;
+}
+
+footer {
+    padding: 4rem 5%;
+    background: #fdfdfd;
+    border-top: 1px solid #eee;
+}

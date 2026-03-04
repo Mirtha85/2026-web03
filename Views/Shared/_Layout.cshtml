@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Tienda Electrodomésticos</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">ELECTRO<span>MODERN</span></div>
+        <nav>
+            <a asp-controller="Appliance" asp-action="List">Productos</a>
+            <a asp-controller="Category" asp-action="List">Categorías</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div>
+            <a href="#" class="btn-contact">Empezar Ahora</a>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="logo">ELECTRO<span>MODERN</span></div>
+        <p>&copy; 2026 Tienda de Electrodomésticos Modernos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

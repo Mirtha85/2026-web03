@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "tienda-electrodomesticos/1.0.0": {
+        "runtime": {
+          "tienda-electrodomesticos.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "tienda-electrodomesticos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
