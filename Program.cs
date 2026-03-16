@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 using tienda_electrodomesticos.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,8 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-builder.Services.AddScoped<IApplianceRepository, MockApplianceRepository>();
+builder.Services.AddDbContext<TiendaElectrodomesticosDbContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("TiendaElectrodomesticosDbContextConnection"));
+});
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IApplianceRepository, ApplianceRepository>();
 
 var app = builder.Build();
 
@@ -30,5 +33,7 @@ app.UseRouting();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Appliance}/{action=List}/{id?}");
+
+DbInitializer.Seed(app);
 
 app.Run();
