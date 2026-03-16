@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using tienda_electrodomesticos.Models;
 
 namespace tienda_electrodomesticos.Models
@@ -7,6 +8,8 @@ namespace tienda_electrodomesticos.Models
         public static void Seed(IApplicationBuilder applicationBuilder)
         {
             TiendaElectrodomesticosDbContext context = applicationBuilder.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<TiendaElectrodomesticosDbContext>();
+
+            context.Database.EnsureCreated();
 
             if (!context.Categories.Any())
             {
