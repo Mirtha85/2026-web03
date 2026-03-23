@@ -20,5 +20,14 @@ namespace tienda_electrodomesticos.Controllers
             ApplianceListViewModel applianceListViewModel = new ApplianceListViewModel(_applianceRepository.AllAppliances, "Electrodomésticos Destacados");
             return View(applianceListViewModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var appliance = _applianceRepository.GetApplianceById(id);
+            if (appliance == null)
+                return NotFound();
+
+            return View(appliance);
+        }
     }
 }

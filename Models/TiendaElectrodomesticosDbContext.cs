@@ -10,5 +10,6 @@ namespace tienda_electrodomesticos.Models
 
         public DbSet<Appliance> Appliances { get; set; }
         public DbSet<Category> Categories { get; set; }
+
     }
 }

@@ -3,6 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title - Tienda Electrodomésticos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -11,6 +12,7 @@
         <nav>
             <a asp-controller="Appliance" asp-action="List">Productos</a>
             <a asp-controller="Category" asp-action="List">Categorías</a>
+            <a asp-controller="Test" asp-action="List">Inventario</a>
             <a href="#">Nosotros</a>
             <a href="#">Contacto</a>
         </nav>
@@ -24,8 +26,15 @@
     </main>
 
     <footer>
-        <div class="logo">ELECTRO<span>MODERN</span></div>
-        <p>&copy; 2026 Tienda de Electrodomésticos Modernos. Todos los derechos reservados.</p>
+        <div class="footer-content">
+            <div class="logo">ELECTRO<span>MODERN</span></div>
+            <p>&copy; 2026 Tienda de Electrodomésticos Modernos. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/josue-kennedy" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/programfive" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.josuekennedy.com/" target="_blank" title="Mi Sitio Web"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

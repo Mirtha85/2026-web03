@@ -1,0 +1,38 @@
+@model Appliance
+
+<div class="details-container">
+    <div class="details-wrapper">
+        <div class="details-image-container">
+            <img src="@Model.ImageUrl" alt="@Model.Name" />
+        </div>
+        
+        <div class="details-content">
+            <nav aria-label="breadcrumb">
+                <p style="color: #888; font-size: 0.9rem;">Productos / @Model.Name</p>
+            </nav>
+            
+            <h1>@Model.Name</h1>
+            
+            <p class="description-short">@Model.ShortDescription</p>
+            
+            <div class="price-tag">
+                @Model.Price.ToString("c")
+            </div>
+            
+            <p class="description-long">
+                @Model.LongDescription
+            </p>
+            
+            <div class="details-addons">
+                <p>✅ En stock: @(Model.InStock ? "Disponible ahora" : "Agotado")</p>
+                <p>🚚 Envío express disponible</p>
+                <p>🛡️ Garantía oficial de 1 año</p>
+            </div>
+            
+            <div class="actions">
+                <a href="#" class="btn-buy-now">Añadir al Carrito</a>
+                <a href="#" class="btn-contact" style="margin-left: 1rem; border: 1px solid #ccc; background: transparent; color: black;">Consultar</a>
+            </div>
+        </div>
+    </div>
+</div>
