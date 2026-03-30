@@ -13,11 +13,11 @@
             <a asp-controller="Appliance" asp-action="List">Productos</a>
             <a asp-controller="Category" asp-action="List">Categorías</a>
             <a asp-controller="Test" asp-action="List">Inventario</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Contacto</a>
+            <a asp-controller="Home" asp-action="About">Nosotros</a>
+            <a asp-controller="Home" asp-action="Contact">Contacto</a>
         </nav>
-        <div>
-            <a href="#" class="btn-contact">Empezar Ahora</a>
+        <div class="cart-container">
+            @await Component.InvokeAsync("ShoppingCartSummary")
         </div>
     </header>
 

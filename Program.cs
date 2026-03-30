@@ -14,6 +14,10 @@ builder.Services.AddDbContext<TiendaElectrodomesticosDbContext>(options =>
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IApplianceRepository, ApplianceRepository>();
 
+builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+builder.Services.AddSession();
+builder.Services.AddHttpContextAccessor();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -28,6 +32,7 @@ else
 }
 
 app.UseStaticFiles();
+app.UseSession();
 app.UseRouting();
 
 app.MapControllerRoute(

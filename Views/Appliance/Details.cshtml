@@ -30,7 +30,10 @@
             </div>
             
             <div class="actions">
-                <a href="#" class="btn-buy-now">Añadir al Carrito</a>
+                <a class="btn-buy-now"
+                    asp-controller="ShoppingCart" 
+                    asp-action="AddToShoppingCart" 
+                    asp-route-applianceId="@Model.ApplianceId">Añadir al Carrito</a>
                 <a href="#" class="btn-contact" style="margin-left: 1rem; border: 1px solid #ccc; background: transparent; color: black;">Consultar</a>
             </div>
         </div>

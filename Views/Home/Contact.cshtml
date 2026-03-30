@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "Contacto";
+}
+
+<div class="contact-hero" style="background-image: url('/images/contact_hero.png');">
+    <div class="hero-overlay">
+        <h1>Contacta con Nosotros</h1>
+        <p>Estamos aquí para ayudarte. Si tienes alguna pregunta sobre nuestros productos o servicios, no dudes en contactarnos.</p>
+    </div>
+</div>
+
+<div class="contact-container">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2>Hablemos</h2>
+            <p>Ya sea para una consulta de producto, soporte técnico o simplemente un saludo, nuestro equipo de expertos está listo para atenderte.</p>
+            
+            <div class="info-list">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Dirección</h3>
+                        <p>Av. Providencia 1234, Santiago, Chile</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Teléfono</h3>
+                        <p>+56 9 1234 5678</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Correo</h3>
+                        <p>soporte@electromodern.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Horario</h3>
+                        <p>Lun - Vie, 9:00 - 18:00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-circles">
+                <a href="https://linkedin.com/in/josue-kennedy" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/programfive" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.josuekennedy.com/" target="_blank"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+
+        <div class="contact-form-container">
+            <form class="premium-form">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" placeholder="Tu nombre..." required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" placeholder="ejemplo@correo.com" required />
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" placeholder="¿Cómo podemos ayudarte?" />
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" rows="5" placeholder="Cuéntanos más detalles..." required></textarea>
+                </div>
+                <button type="submit" class="btn-buy-now" style="width: 100%;">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+</div>

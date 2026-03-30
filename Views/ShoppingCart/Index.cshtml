@@ -1,0 +1,41 @@
+@model tienda_electrodomesticos.ViewModels.ShoppingCartViewModel
+
+<div class="row checkoutForm" style="padding: 4rem 5%;">
+    <h2>Tu pedido en ElectroModern</h2>
+    <h4>Aquí están los electrodomésticos en tu carrito.</h4>
+    <table class="table table-bordered table-striped" style="width: 100%; border-collapse: collapse; margin-top: 2rem;">
+        <thead>
+            <tr style="background: #f4f4f4; text-align: left;">
+                <th style="padding: 1rem;">Cantidad</th>
+                <th style="padding: 1rem;">Electrodoméstico</th>
+                <th style="padding: 1rem; text-align: right;">Precio</th>
+                <th style="padding: 1rem; text-align: right;">Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.ShoppingCart.GetShoppingCartItems())
+            {
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 1rem; text-align: center;">@line.Amount</td>
+                    <td style="padding: 1rem;">@line.Appliance.Name</td>
+                    <td style="padding: 1rem; text-align: right;">@line.Appliance.Price.ToString("C")</td>
+                    <td style="padding: 1rem; text-align: right;">
+                        @((line.Amount * line.Appliance.Price).ToString("C"))
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" style="padding: 1rem; text-align: right; font-weight: bold;">Total:</td>
+                <td style="padding: 1rem; text-align: right; font-weight: bold;">
+                    @Model.ShoppingCartTotal.ToString("C")
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-center" style="margin-top: 2rem;">
+        <a class="btn-buy-now" href="#">¡Comprar ahora!</a>
+    </div>
+</div>
